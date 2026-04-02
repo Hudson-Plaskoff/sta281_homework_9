@@ -450,14 +450,6 @@ display: none;
 <pre class="r"><code>babynames_prop_percent &lt;- babynames %&gt;% 
   mutate(
     prop_percent = str_glue(&quot;{str_sub(prop, 4, 4)}.{str_sub(prop, 5, 6)}%&quot;)
-  ) %&gt;%
-  select(
-    year,
-    sex,
-    name,
-    n,
-    prop,
-    prop_percent
   )
 
 knitr::kable(babynames_prop_percent %&gt;% head())</code></pre>
@@ -524,10 +516,98 @@ knitr::kable(babynames_prop_percent %&gt;% head())</code></pre>
 </tbody>
 </table>
 </div>
+<div id="percentage-by-year" class="section level2">
+<h2>Percentage by Year<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></h2>
+<pre class="r"><code>babynames_prop_percent &lt;- babynames_prop_percent %&gt;% 
+  mutate(
+    prop_percent_year = str_glue(&quot;{str_sub(prop, 4, 4)}.{str_sub(prop, 5, 6)}% in {year}&quot;)
+  )
+
+knitr::kable(babynames_prop_percent %&gt;% head())</code></pre>
+<table>
+<colgroup>
+<col width="7%" />
+<col width="6%" />
+<col width="15%" />
+<col width="7%" />
+<col width="15%" />
+<col width="20%" />
+<col width="27%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right">year</th>
+<th align="left">sex</th>
+<th align="left">name</th>
+<th align="right">n</th>
+<th align="right">prop</th>
+<th align="left">prop_percent</th>
+<th align="left">prop_percent_year</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1880</td>
+<td align="left">F</td>
+<td align="left">Mary</td>
+<td align="right">7065</td>
+<td align="right">0.0723836</td>
+<td align="left">7.23%</td>
+<td align="left">7.23% in 1880</td>
+</tr>
+<tr class="even">
+<td align="right">1880</td>
+<td align="left">F</td>
+<td align="left">Anna</td>
+<td align="right">2604</td>
+<td align="right">0.0266790</td>
+<td align="left">2.66%</td>
+<td align="left">2.66% in 1880</td>
+</tr>
+<tr class="odd">
+<td align="right">1880</td>
+<td align="left">F</td>
+<td align="left">Emma</td>
+<td align="right">2003</td>
+<td align="right">0.0205215</td>
+<td align="left">2.05%</td>
+<td align="left">2.05% in 1880</td>
+</tr>
+<tr class="even">
+<td align="right">1880</td>
+<td align="left">F</td>
+<td align="left">Elizabeth</td>
+<td align="right">1939</td>
+<td align="right">0.0198658</td>
+<td align="left">1.98%</td>
+<td align="left">1.98% in 1880</td>
+</tr>
+<tr class="odd">
+<td align="right">1880</td>
+<td align="left">F</td>
+<td align="left">Minnie</td>
+<td align="right">1746</td>
+<td align="right">0.0178884</td>
+<td align="left">1.78%</td>
+<td align="left">1.78% in 1880</td>
+</tr>
+<tr class="even">
+<td align="right">1880</td>
+<td align="left">F</td>
+<td align="left">Margaret</td>
+<td align="right">1578</td>
+<td align="right">0.0161672</td>
+<td align="left">1.61%</td>
+<td align="left">1.61% in 1880</td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="footnotes footnotes-end-of-document">
 <hr />
 <ol>
 <li id="fn1"><p>Question 1 complete<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>Question 2 complete<a href="#fnref2" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
 

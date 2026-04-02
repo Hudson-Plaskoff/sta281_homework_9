@@ -19,14 +19,16 @@ library(babynames)
 babynames_prop_percent <- babynames %>% 
   mutate(
     prop_percent = str_glue("{str_sub(prop, 4, 4)}.{str_sub(prop, 5, 6)}%")
-  ) %>%
-  select(
-    year,
-    sex,
-    name,
-    n,
-    prop,
-    prop_percent
+  )
+
+knitr::kable(babynames_prop_percent %>% head())
+```
+
+## Percentage by Year^[Question 2 complete]
+```{r}
+babynames_prop_percent <- babynames_prop_percent %>% 
+  mutate(
+    prop_percent_year = str_glue("{str_sub(prop, 4, 4)}.{str_sub(prop, 5, 6)}% in {year}")
   )
 
 knitr::kable(babynames_prop_percent %>% head())
