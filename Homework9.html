@@ -682,12 +682,93 @@ knitr::kable(babynames_prop_filtered %&gt;% head())</code></pre>
 </tbody>
 </table>
 </div>
+<div id="random-rows" class="section level2">
+<h2>Random Rows<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a></h2>
+<pre class="r"><code>set.seed(1)
+
+babynames_sample &lt;- babynames_prop_filtered %&gt;%
+  slice_sample(n=5) %&gt;%
+  arrange(year)
+
+knitr::kable(babynames_sample %&gt;% head())</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">year</th>
+<th align="left">sex</th>
+<th align="left">name</th>
+<th align="right">n</th>
+<th align="right">prop</th>
+<th align="left">prop_percent</th>
+<th align="left">prop_percent_year</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1893</td>
+<td align="left">M</td>
+<td align="left">George</td>
+<td align="right">4320</td>
+<td align="right">0.0356904</td>
+<td align="left">3.56%</td>
+<td align="left">3.56% in 1893</td>
+</tr>
+<tr class="even">
+<td align="right">1922</td>
+<td align="left">M</td>
+<td align="left">George</td>
+<td align="right">27349</td>
+<td align="right">0.0243046</td>
+<td align="left">2.43%</td>
+<td align="left">2.43% in 1922</td>
+</tr>
+<tr class="odd">
+<td align="right">1930</td>
+<td align="left">M</td>
+<td align="left">George</td>
+<td align="right">22779</td>
+<td align="right">0.0201687</td>
+<td align="left">2.01%</td>
+<td align="left">2.01% in 1930</td>
+</tr>
+<tr class="even">
+<td align="right">1947</td>
+<td align="left">M</td>
+<td align="left">George</td>
+<td align="right">23919</td>
+<td align="right">0.0128778</td>
+<td align="left">1.28%</td>
+<td align="left">1.28% in 1947</td>
+</tr>
+<tr class="odd">
+<td align="right">2008</td>
+<td align="left">M</td>
+<td align="left">George</td>
+<td align="right">2552</td>
+<td align="right">0.0011715</td>
+<td align="left">0.11%</td>
+<td align="left">0.11% in 2008</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="single-string" class="section level2">
+<h2>Single String<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a></h2>
+<pre class="r"><code>babynames_strings &lt;- babynames_sample %&gt;% pull(prop_percent_year)
+
+babynames_single_string &lt;- str_flatten(babynames_strings,collapse=&quot;, &quot;,last=&quot;, and &quot;)
+  
+str_view(babynames_single_string)</code></pre>
+<pre><code>## [1] │ 3.56% in 1893, 2.43% in 1922, 2.01% in 1930, 1.28% in 1947, and 0.11% in 2008</code></pre>
+</div>
 <div class="footnotes footnotes-end-of-document">
 <hr />
 <ol>
 <li id="fn1"><p>Question 1 complete<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
 <li id="fn2"><p>Question 2 complete<a href="#fnref2" class="footnote-back">↩︎</a></p></li>
 <li id="fn3"><p>Question 3 complete<a href="#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>Question 4 complete<a href="#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>Question 5 complete<a href="#fnref5" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
 

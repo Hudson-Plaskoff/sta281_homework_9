@@ -44,3 +44,23 @@ babynames_prop_filtered <- babynames_prop_percent %>%
 
 knitr::kable(babynames_prop_filtered %>% head())
 ```
+
+## Random Rows^[Question 4 complete]
+```{r}
+set.seed(1)
+
+babynames_sample <- babynames_prop_filtered %>%
+  slice_sample(n=5) %>%
+  arrange(year)
+
+knitr::kable(babynames_sample %>% head())
+```
+
+## Single String^[Question 5 complete]
+```{r}
+babynames_strings <- babynames_sample %>% pull(prop_percent_year)
+
+babynames_single_string <- str_flatten(babynames_strings,collapse=", ",last=", and ")
+  
+str_view(babynames_single_string)
+```
