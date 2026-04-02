@@ -757,9 +757,17 @@ knitr::kable(babynames_sample %&gt;% head())</code></pre>
 <pre class="r"><code>babynames_strings &lt;- babynames_sample %&gt;% pull(prop_percent_year)
 
 babynames_single_string &lt;- str_flatten(babynames_strings,collapse=&quot;, &quot;,last=&quot;, and &quot;)
-  
+
 str_view(babynames_single_string)</code></pre>
 <pre><code>## [1] │ 3.56% in 1893, 2.43% in 1922, 2.01% in 1930, 1.28% in 1947, and 0.11% in 2008</code></pre>
+</div>
+<div id="final-string" class="section level2">
+<h2>Final String<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a></h2>
+<pre class="r"><code>babynames_final_string &lt;- str_glue(&quot;Out of all male names, the name George represented {babynames_single_string}&quot;)
+
+cat(babynames_final_string)</code></pre>
+<p>Out of all male names, the name George represented 3.56% in 1893,
+2.43% in 1922, 2.01% in 1930, 1.28% in 1947, and 0.11% in 2008</p>
 </div>
 <div class="footnotes footnotes-end-of-document">
 <hr />
@@ -769,6 +777,7 @@ str_view(babynames_single_string)</code></pre>
 <li id="fn3"><p>Question 3 complete<a href="#fnref3" class="footnote-back">↩︎</a></p></li>
 <li id="fn4"><p>Question 4 complete<a href="#fnref4" class="footnote-back">↩︎</a></p></li>
 <li id="fn5"><p>Question 5 complete<a href="#fnref5" class="footnote-back">↩︎</a></p></li>
+<li id="fn6"><p>Question 6 complete<a href="#fnref6" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
 

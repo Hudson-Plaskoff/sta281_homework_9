@@ -61,6 +61,13 @@ knitr::kable(babynames_sample %>% head())
 babynames_strings <- babynames_sample %>% pull(prop_percent_year)
 
 babynames_single_string <- str_flatten(babynames_strings,collapse=", ",last=", and ")
-  
+
 str_view(babynames_single_string)
+```
+
+## Final String^[Question 6 complete]
+```{r results = 'asis'}
+babynames_final_string <- str_glue("Out of all male names, the name George represented {babynames_single_string}")
+
+cat(babynames_final_string)
 ```
