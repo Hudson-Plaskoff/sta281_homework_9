@@ -603,11 +603,91 @@ knitr::kable(babynames_prop_percent %&gt;% head())</code></pre>
 </tbody>
 </table>
 </div>
+<div id="filter-by-name-and-sex" class="section level2">
+<h2>Filter by Name and Sex<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></h2>
+<pre class="r"><code>babynames_prop_filtered &lt;- babynames_prop_percent %&gt;% 
+  filter(
+    name==&quot;George&quot;,
+    sex==&quot;M&quot;
+  )
+
+knitr::kable(babynames_prop_filtered %&gt;% head())</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">year</th>
+<th align="left">sex</th>
+<th align="left">name</th>
+<th align="right">n</th>
+<th align="right">prop</th>
+<th align="left">prop_percent</th>
+<th align="left">prop_percent_year</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1880</td>
+<td align="left">M</td>
+<td align="left">George</td>
+<td align="right">5126</td>
+<td align="right">0.0432939</td>
+<td align="left">4.32%</td>
+<td align="left">4.32% in 1880</td>
+</tr>
+<tr class="even">
+<td align="right">1881</td>
+<td align="left">M</td>
+<td align="left">George</td>
+<td align="right">4664</td>
+<td align="right">0.0430727</td>
+<td align="left">4.30%</td>
+<td align="left">4.30% in 1881</td>
+</tr>
+<tr class="odd">
+<td align="right">1882</td>
+<td align="left">M</td>
+<td align="left">George</td>
+<td align="right">5193</td>
+<td align="right">0.0425548</td>
+<td align="left">4.25%</td>
+<td align="left">4.25% in 1882</td>
+</tr>
+<tr class="even">
+<td align="right">1883</td>
+<td align="left">M</td>
+<td align="left">George</td>
+<td align="right">4736</td>
+<td align="right">0.0421064</td>
+<td align="left">4.21%</td>
+<td align="left">4.21% in 1883</td>
+</tr>
+<tr class="odd">
+<td align="right">1884</td>
+<td align="left">M</td>
+<td align="left">George</td>
+<td align="right">4961</td>
+<td align="right">0.0404194</td>
+<td align="left">4.04%</td>
+<td align="left">4.04% in 1884</td>
+</tr>
+<tr class="even">
+<td align="right">1885</td>
+<td align="left">M</td>
+<td align="left">George</td>
+<td align="right">4674</td>
+<td align="right">0.0403122</td>
+<td align="left">4.03%</td>
+<td align="left">4.03% in 1885</td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="footnotes footnotes-end-of-document">
 <hr />
 <ol>
 <li id="fn1"><p>Question 1 complete<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
 <li id="fn2"><p>Question 2 complete<a href="#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>Question 3 complete<a href="#fnref3" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
 

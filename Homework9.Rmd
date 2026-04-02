@@ -33,3 +33,14 @@ babynames_prop_percent <- babynames_prop_percent %>%
 
 knitr::kable(babynames_prop_percent %>% head())
 ```
+
+## Filter by Name and Sex^[Question 3 complete]
+```{r}
+babynames_prop_filtered <- babynames_prop_percent %>% 
+  filter(
+    name=="George",
+    sex=="M"
+  )
+
+knitr::kable(babynames_prop_filtered %>% head())
+```
